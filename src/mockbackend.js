@@ -1,7 +1,7 @@
 // here is where I would set application state to be later observedby app or analytics.
 export const loadDataAPI = () => {
   // loadingScreen(true);
-  // call backend
+  console.log("calling load backend");
   return {
     loadScreen: true,
   };
