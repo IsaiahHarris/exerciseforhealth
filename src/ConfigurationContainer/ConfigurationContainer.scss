@@ -1,0 +1,17 @@
+.configuration-container {
+    display: flex;
+    width: 980px;
+    max-width: 85%;
+    padding: 20px;
+    .title {
+        font-size: 30px;
+        font-weight: bold;
+        box-shadow: 3px 3px 3px grey;
+    }
+    .choices-container  {
+        width: 160px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 15px
+    }
+}
