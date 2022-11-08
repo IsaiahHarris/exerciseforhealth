@@ -6,8 +6,8 @@ import ConfigurationContainer from "./ConfigurationContainer/ConfigurationContai
 function App() {
   const [coinsurance, setCoinsurance] = useState();
   const [PPOPlan, setPPOPlan] = useState();
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [configurationEnabled, setConfigurationEnabled] = useState();
   const [maximumType, setMaximumType] = useState();
   const loadData = () => {

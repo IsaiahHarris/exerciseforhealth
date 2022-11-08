@@ -7,11 +7,13 @@
         font-size: 30px;
         font-weight: bold;
         box-shadow: 3px 3px 3px grey;
+        height: 40px;
+        width: 200px;
     }
     .choices-container  {
-        width: 160px;
+        width:405px;
         display: flex;
         flex-wrap: wrap;
-        margin-left: 15px
+        margin-left: 15px;
     }
 }

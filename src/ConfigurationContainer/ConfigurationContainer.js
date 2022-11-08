@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ConfigurationContainer.scss";
-import { saveConfigurationAPI } from "../mockbackend";
 const ConfigurationContainer = ({ setMaximumType }) => {
   return (
     <div className="configuration-container">
@@ -13,6 +12,13 @@ const ConfigurationContainer = ({ setMaximumType }) => {
         <input type="radio" value="Lifetime" name="maximumType" /> Lifetime
         <input type="radio" value="Individual" name="maximumType" /> Individual
         <input type="radio" value="Family" name="maximumType" /> Family
+        <input type="radio" value="Rollover" name="maximumType" /> Rollover
+        <input type="radio" value="Extended Maximum" name="maximumType" />{" "}
+        Extended Maximum
+        <input type="radio" value="Expanding Maximum" name="maximumType" />{" "}
+        Expanding Maximum
+        <input type="radio" value="PPO Split Maximum" name="maximumType" /> PPO
+        Split Maximum
       </div>
     </div>
   );
