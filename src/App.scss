@@ -8,3 +8,17 @@
   justify-content: center;
   width: 85%;
 }
+
+.dates {
+  width: 600px;
+  max-width: 85%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .date-inputs-container {
+    input {
+      width: 100px;
+      background-color:yellow;
+    }
+  }
+}

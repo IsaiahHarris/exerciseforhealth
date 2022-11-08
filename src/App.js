@@ -6,20 +6,28 @@ import ConfigurationContainer from "./ConfigurationContainer/ConfigurationContai
 function App() {
   const [coinsurance, setCoinsurance] = useState();
   const [PPOPlan, setPPOPlan] = useState();
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
   const [configurationEnabled, setConfigurationEnabled] = useState();
+  const [maximumType, setMaximumType] = useState();
   const loadData = () => {
     const canLoadConfiguration = loadDataAPI();
-    console.log(canLoadConfiguration);
     setConfigurationEnabled(canLoadConfiguration.loadScreen);
   };
+
   const saveConfiguration = () => {
-    saveConfigurationAPI();
+    saveConfigurationAPI(maximumType);
   };
+
   return (
     <div className="App">
       <div className="header-container">
         <Button text="Load" click={loadData} />
-        <Button text="Save" click={saveConfiguration} />
+        <Button
+          text="Save"
+          click={saveConfiguration}
+          isDisabled={!maximumType}
+        />
         <select
           type="radio"
           value={coinsurance}
@@ -46,7 +54,20 @@ function App() {
           <option value="uhc">UHC</option>
         </select>
       </div>
-      {configurationEnabled && <ConfigurationContainer />}
+      <div className="dates">
+        <div className="date-inputs-container">
+          Start Date{" "}
+          <input
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+          End Date{" "}
+          <input value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+        </div>
+      </div>
+      {configurationEnabled && (
+        <ConfigurationContainer setMaximumType={setMaximumType} />
+      )}
     </div>
   );
 }
